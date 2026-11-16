@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Paoh Official Store – Mobile Legends Top-Up</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .qrbox{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  #qr{background:#fff;padding:10px;border-radius:12px;width:220px;height:220px;display:grid;place-items:center}
+  #qr img,#qr canvas{max-width:100%}
+  .payinfo p{margin:0 0 6px}
+  .upiid{font-weight:700;word-break:break-all}
+  .steps p{margin:0 0 6px;color:var(--muted)}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -33,23 +41,40 @@
     <div class="grid" id="packs"></div>
   </section>
 
-  <section class="card">
-    <h2><span class="step">3</span>Place your order</h2>
-    <div class="row one">
-      <div><label for="contact">Your WhatsApp / contact (optional)</label><input id="contact" placeholder="+55 ..."></div>
-    </div>
-    <div class="summary">
-      <div>
-        <div id="sumText" class="hint">Select a pack to continue</div>
-        <div class="total" id="sumPrice">—</div>
+  <section class="card" id="payCard">
+    <h2><span class="step">3</span>Pay with UPI</h2>
+    <div id="payWait" class="hint">Enter your IDs and choose a pack to see the payment QR.</div>
+    <div id="payReady" hidden>
+      <div class="qrbox">
+        <div id="qr"></div>
+        <div class="payinfo">
+          <p class="hint">Amount to pay</p>
+          <p class="total" id="sumPrice">—</p>
+          <p id="sumText" class="hint"></p>
+          <p class="hint">UPI ID</p>
+          <p class="upiid" id="upiText"></p>
+          <a class="btn ghost" id="upiBtn">Pay with UPI app</a>
+        </div>
       </div>
-      <a class="btn" id="orderBtn" aria-disabled="true" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <p class="hint" style="margin-top:12px">Scan the QR with any UPI app, or tap the button on your phone. Pay the exact amount shown.</p>
     </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">4</span>Send your order</h2>
+    <div class="steps">
+      <p>After paying, tap the button below. It opens WhatsApp with your order. Then attach your payment screenshot.</p>
+    </div>
+    <div class="row one" style="margin-top:12px">
+      <div><label for="contact">Your WhatsApp number (optional)</label><input id="contact" placeholder="+91 ..."></div>
+    </div>
+    <a class="btn" id="orderBtn" aria-disabled="true" target="_blank" rel="noopener">I've paid – send order on WhatsApp</a>
     <div class="msg" id="orderMsg"></div>
   </section>
 
   <footer>© Paoh Official Store. Not affiliated with Moonton. Mobile Legends: Bang Bang is a trademark of Moonton.</footer>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
