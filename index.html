@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paoh Official Store – Mobile Legends Top-Up</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">Paoh <span>Official Store</span></div>
+    <a class="btn ghost" id="supportLink" target="_blank" rel="noopener">Support</a>
+  </header>
+
+  <section class="hero">
+    <h1>Mobile Legends diamonds, fast.</h1>
+    <p>No password needed. Just your User ID and Zone ID.</p>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">1</span>Enter your account</h2>
+    <div class="row">
+      <div><label for="uid">User ID</label><input id="uid" inputmode="numeric" placeholder="e.g. 123456789" autocomplete="off"></div>
+      <div><label for="zid">Zone ID</label><input id="zid" inputmode="numeric" placeholder="e.g. 1234" autocomplete="off"></div>
+    </div>
+    <div class="msg" id="idMsg"></div>
+    <small class="hint">Find both in the game: tap your profile picture, then look under your name.</small>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">2</span>Choose a pack</h2>
+    <div class="grid" id="packs"></div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">3</span>Place your order</h2>
+    <div class="row one">
+      <div><label for="contact">Your WhatsApp / contact (optional)</label><input id="contact" placeholder="+55 ..."></div>
+    </div>
+    <div class="summary">
+      <div>
+        <div id="sumText" class="hint">Select a pack to continue</div>
+        <div class="total" id="sumPrice">—</div>
+      </div>
+      <a class="btn" id="orderBtn" aria-disabled="true" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+    <div class="msg" id="orderMsg"></div>
+  </section>
+
+  <footer>© Paoh Official Store. Not affiliated with Moonton. Mobile Legends: Bang Bang is a trademark of Moonton.</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
